@@ -1,5 +1,5 @@
 /**************************************************************************
-* Copyright (C) echoAR, Inc. (dba "echo3D") 2018-2021.                    *
+* Copyright (C) echoAR, Inc. (dba "echo3D") 2018-2022.                    *
 * echoAR, Inc. proprietary and confidential.                              *
 *                                                                         *
 * Use subject to the terms of the Terms of Service available at 	      *
@@ -17,6 +17,9 @@ using Siccity.GLTFUtility;
 using System.Globalization;
 using UnityEngine.Video;
 
+/// <summary>
+/// Modified version of echo3D.cs
+/// </summary>
 public class CardMatch : MonoBehaviour
 {
 
@@ -119,8 +122,6 @@ public class CardMatch : MonoBehaviour
             StartCoroutine(WebsocketClient());
             // Download Assets
             StartCoroutine(DownloadAssets(serverURL));
-            // Shuffle and place the cards
-            //StartCoroutine(DisplayCards());
         }
     }
 
@@ -811,29 +812,4 @@ public class CardMatch : MonoBehaviour
             Debug.Log("Data update complete!");
         }
     }
-
-    // public void DisplayCards()
-    // {
-    //     Debug.Log("Arranging and displaying cards");
-    //     // Get list of all the cards
-    //     var cards = FindObjectsOfType<CardItem>();
-
-    //     // Iterate through the cards and change the transform fields
-    //     foreach (var card in cards)
-    //     {
-    //         Vector3? position = cardLayoutManager.GetNextCardPosition();
-
-    //         if (position != null)
-    //         {
-    //             card.gameObject.transform.position = (Vector3)cardLayoutManager.GetNextCardPosition();
-    //         }
-    //         else
-    //         {
-    //             //yield return null;
-    //         }
-
-    //         Debug.Log(string.Format("Point: {0} {1} {2}", position.Value.x, position.Value.y, position.Value.z));
-    //     }
-    //     //yield return null;
-    // }
 }

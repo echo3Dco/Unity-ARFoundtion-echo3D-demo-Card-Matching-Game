@@ -5,9 +5,6 @@ using System.Linq;
 using System;
 using System.Collections;
 
-/// <summary>
-/// CardManager manages 
-/// </summary>
 public class CardManager : MonoBehaviour
 {
     #region Properties
@@ -18,8 +15,7 @@ public class CardManager : MonoBehaviour
     Camera arCam;
     [SerializeField]
     TMPro.TextMeshPro textMesh;
-    GameObject cardMatchRoot;
-    bool cardsInit = false;
+    bool isCardsInit = false;
     Coroutine MsgCoroutine;
     #endregion
 
@@ -33,23 +29,18 @@ public class CardManager : MonoBehaviour
     {
         arCam = GameObject.Find("AR Camera").GetComponent<Camera>();
         SelectedCards = new List<GameObject>();
-        cardsInit = false;
+        isCardsInit = false;
     }
 
     void Update()
     {
-        if (cardMatchRoot == null)
-        {
-            cardMatchRoot = GameObject.Find("CardMatchRoot");
-        }
-
-        if (!cardsInit)
+        if (!isCardsInit)
         {
             //check that all cards are now ready
             if (GetCardCount() > 0 && GetCardItems().All(n => n.isInit))
             {
                 PopMessage("Ready!");
-                cardsInit = true;
+                isCardsInit = true;
             }
         }
 
@@ -66,7 +57,7 @@ public class CardManager : MonoBehaviour
                 {
 
                     if (hit.collider.gameObject.tag == CardMatch.CARD_TAG
-                        && !hit.collider.gameObject.GetComponent<CardItem>().selected)
+                        && !hit.collider.gameObject.GetComponent<CardItem>().isSelected)
                     {
                         // hit on a card that has not been selected: 
                         // initiate SELECT animation
@@ -86,7 +77,7 @@ public class CardManager : MonoBehaviour
                         HandleMatch();
                     }
                     else if (hit.collider.gameObject.tag == CardMatch.CARD_TAG
-                        && hit.collider.gameObject.GetComponent<CardItem>().selected)
+                        && hit.collider.gameObject.GetComponent<CardItem>().isSelected)
                     {
                         // hit on a card that has already been selected: 
                         // initiate UNSELECT animation
@@ -98,15 +89,6 @@ public class CardManager : MonoBehaviour
                     }
                 }
             }
-            // else if (Input.GetTouch(0).phase == TouchPhase.Moved)
-            // {
-
-            // }
-
-            // if (Input.GetTouch(0).phase == TouchPhase.Ended)
-            // {
-            //     selectedCard = null;
-            // }
         }
     }
     #endregion
@@ -198,9 +180,6 @@ public class CardManager : MonoBehaviour
         return GameObject.FindObjectsOfType<CardItem>();
     }
 
-    #endregion
-
-    #region Interaction Methods
     /// <summary>
     /// Add GameObject to the List of SelectedCards
     /// </summary>

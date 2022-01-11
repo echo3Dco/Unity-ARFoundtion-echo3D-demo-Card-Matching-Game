@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
@@ -10,7 +9,6 @@ public class CardSpawnManager : MonoBehaviour
     List<ARRaycastHit> m_Hits = new List<ARRaycastHit>();
     [SerializeField]
     GameObject spawnablePrefab;
-
     Camera arCam;
     GameObject spawnedObject;
     [SerializeField]
@@ -45,19 +43,11 @@ public class CardSpawnManager : MonoBehaviour
                     }
                     else
                     {
+                        // If hit object that isn't "Spawnable" then spawn the prefab
                         SpawnPrefab(m_Hits[0].pose.position);
                         initiated = true;
                     }
                 }
-            }
-            else if (Input.GetTouch(0).phase == TouchPhase.Moved && spawnedObject != null)
-            {
-                spawnedObject.transform.position = m_Hits[0].pose.position;
-            }
-
-            if (Input.GetTouch(0).phase == TouchPhase.Ended)
-            {
-                spawnedObject = null;
             }
         }
     }

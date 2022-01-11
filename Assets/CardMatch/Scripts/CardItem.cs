@@ -1,19 +1,16 @@
-using System.Collections.Generic;
 using UnityEngine;
 using System.Collections;
-using System.Globalization;
-using UnityEngine.XR.ARFoundation;
 using System.Linq;
 
 public class CardItem : MonoBehaviour
 {
     #region Properties
+    public string ID;
     public Entry entry;
     public Vector3? startPosition;
     public CardLayoutManager cardLayoutManager;
     //public CardManager cardManager;
-    public bool selected;
-    public string ID;
+    public bool isSelected;
     public bool isReady;
     public bool isInit;
     //public int count;
@@ -27,9 +24,7 @@ public class CardItem : MonoBehaviour
     }
     void Start()
     {
-        selected = false;
-        // get the next available position from the CardLayoutManager
-        //MoveToPosition();
+        isSelected = false;
         isReady = true;
         isInit = false;
     }
@@ -48,7 +43,9 @@ public class CardItem : MonoBehaviour
     #endregion
 
     #region Interaction Methods
-
+    /// <summary>
+    /// Get an available card position form CardLayoutManager and move card to that position.
+    /// </summary>
     public void MoveToPosition()
     {
         var position = cardLayoutManager.GetNextCardPosition();
@@ -82,7 +79,7 @@ public class CardItem : MonoBehaviour
     /// </summary>
     public void Select()
     {
-        selected = true;
+        isSelected = true;
         gameObject.transform.localScale = new Vector3(.125f, .125f, .125f);
     }
 
@@ -91,7 +88,7 @@ public class CardItem : MonoBehaviour
     /// </summary>
     public void Unselect()
     {
-        selected = false;
+        isSelected = false;
         gameObject.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
     }
 
@@ -100,7 +97,7 @@ public class CardItem : MonoBehaviour
     /// </summary>
     public void Fadeout()
     {
-        if (!selected) { return; }
+        if (!isSelected) { return; }
 
         StartCoroutine(Fade(0.0f));
     }
@@ -111,7 +108,7 @@ public class CardItem : MonoBehaviour
     /// <returns></returns>
     IEnumerator Fade(float seconds)
     {
-        // TODO: fill in the fading part
+        // TODO: implement the fading of the object instead of setting to inactive
         //yield return new WaitForSeconds(seconds);
 
         gameObject.SetActive(false);

@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6542c46d1c887b449860b7295ea0cc0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  APIKey: lingering-snowflake-9721
+  APIKey: <YOUR_API_KEY>
   CARD_SPACING: 0.75
   MULTIPLIER: 2
