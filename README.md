@@ -25,7 +25,7 @@ Feel free to reach out at [support@echo3D.co](mailto:support@echo3D.co) or join 
 ![Demo start](/Assets/Images/1-Start.png)
 ![Wait for card loading](/Assets/Images/2-WaitForLoad.png)
 ![Cards loaded](/Assets/Images/3-Loaded.png)
-![Select cards](/Assets/Images/4-SelectedCards.png)
+![Select cards](/Assets/Images/4-SelectCards.png)
 ![Match found](/Assets/Images/5-MatchFound.png)
 ![No match found](/Assets/Images/6-NoMatch.png)
 ![Winner](/Assets/Images/7-Winner.png)
