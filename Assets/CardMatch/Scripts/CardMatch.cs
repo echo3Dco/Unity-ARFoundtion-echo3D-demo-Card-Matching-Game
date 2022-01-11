@@ -35,9 +35,9 @@ public class CardMatch : MonoBehaviour
     [HideInInspector]
     public CardLayoutManager cardLayoutManager;
 
-    //public CardManager cardManager;
-
+    [Tooltip("Use CARD_SPACING to space cards out")]
     public float CARD_SPACING = .75f;
+    [Tooltip("Multiplier determines the number of cards to match")]
     public int MULTIPLIER = 2;
     public static string CARD_TAG = "CardItem";
     public static int TOTAL_CARDS;
