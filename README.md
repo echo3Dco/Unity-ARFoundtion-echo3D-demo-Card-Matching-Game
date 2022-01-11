@@ -22,10 +22,10 @@ This project uses a [third party library](https://pub.dev/packages/flutter_unity
 Feel free to reach out at [support@echo3D.co](mailto:support@echo3D.co) or join our [support channel on Slack](https://go.echo3D.co/join).
 
 ## Screenshots
-![Demo start](/Images/1-Start.png)
-![Wait for card loading](/Images/2-WaitForLoad.png)
-![Cards loaded](/Images/3-Loaded.png)
-![Select cards](/Images/4-SelectedCards.png)
-![Match found](/Images/5-MatchFound.png)
-![No match found](/Images/6-NoMatch.png)
-![Winner](/Images/7-Winner.png)
+![Demo start](/Assets/Images/1-Start.png)
+![Wait for card loading](/Assets/Images/2-WaitForLoad.png)
+![Cards loaded](/Assets/Images/3-Loaded.png)
+![Select cards](/Assets/Images/4-SelectedCards.png)
+![Match found](/Assets/Images/5-MatchFound.png)
+![No match found](/Assets/Images/6-NoMatch.png)
+![Winner](/Assets/Images/7-Winner.png)
