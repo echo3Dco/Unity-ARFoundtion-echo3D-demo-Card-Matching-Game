@@ -1,4 +1,4 @@
-# Card-Matching-Demo
+# Unity-echo3D-demo-Card-Matching-Game
 Simple card matching game using AR Foundation and Unity with echo3D for Android.
 
 Built in Unity 2019.4 with AR Foundation 2.1.10 and ARCore XR Plugin 2.1.10l.
